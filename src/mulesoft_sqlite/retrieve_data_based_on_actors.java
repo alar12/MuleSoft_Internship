@@ -12,29 +12,21 @@ public class retrieve_data_based_on_actors {
 		 try {
 			 Class.forName("org.sqlite.JDBC");
 			 String dbURL ="jdbc:sqlite:movies.db";
-			 Connection conn=DriverManager.getConnection(dbURL);
+			 Connection conn=DriverManager.getConnection("jdbc:sqlite:movies.db");
 			 if(conn!=null) {
 				 System.out.println("connection established successful");
 				Statement st=conn.createStatement();				
 			Scanner sc=new Scanner(System.in);
 			System.out.println("Enter actor name:");
-			String actor_name=sc.next();
-				 PreparedStatement pt=conn.prepareStatement("select * from movies where actor_name=? ");
-				 pt.setString(1, actor_name);
+			String actor_n=sc.next();
+				 PreparedStatement pt=conn.prepareStatement("select * from movies where actor_n=? ");
+				 pt.setString(1, actor_n);
 				 ResultSet rs=pt.executeQuery();
 				 System.out.println("movie_name\tactor_name\tactress_name\tyear");
 				 System.out.println("________________________________________________");
 				 while(rs.next()) {
-					 System.out.println(rs.getString(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3)+"\t"+rs.getInt(4));
+					 System.out.println(rs.getString(1));
 		 }
-				
-				 
-			
-				
-			 }
-			 else {
-				 System.out.println("not connected");
-			 }
 		 }
 		 catch(Exception e) {
 			 System.out.println(e);
