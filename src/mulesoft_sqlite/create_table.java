@@ -7,7 +7,7 @@ public class create_table {
 		 try {
 			 Class.forName("org.sqlite.JDBC");
 			 String dbURL ="jdbc:sqlite:movies.db";
-			 Connection conn=DriverManager.getConnection(dbURL);
+			 Connection conn=DriverManager.getConnection("jdbc:sqlite:movies.db");
 			 if(conn!=null) {
 				Statement st=conn.createStatement();				
 				int n=st.executeUpdate("create table movies(movie_n text,actor_n text,actress_n text,year_ int)");
