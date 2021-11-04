@@ -9,11 +9,8 @@ public class create_table {
 			 String dbURL ="jdbc:sqlite:movies.db";
 			 Connection conn=DriverManager.getConnection(dbURL);
 			 if(conn!=null) {
-				 System.out.println("connection established successful");
 				Statement st=conn.createStatement();				
-				int n=st.executeUpdate("create table movies(movie_name text,actor_name text,actress_name text,yearofrelease int)");	 
-			
-				
+				int n=st.executeUpdate("create table movies(movie_n text,actor_n text,actress_n text,year_ int)");
 			 }
 		 }
 		 catch(Exception e) {
