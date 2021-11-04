@@ -11,26 +11,24 @@ public class insert_data {
 		 try {
 			 Class.forName("org.sqlite.JDBC");
 			 String dbURL ="jdbc:sqlite:movies.db";
-			 Connection conn=DriverManager.getConnection(dbURL);
+			 Connection conn=DriverManager.getConnection("jdbc:sqlite:movies.db");
 			 if(conn!=null) {
 				System.out.println("connection established successful");
-				
-				
 				Scanner sc=new Scanner(System.in);
 				 System.out.println("Enter movie name:");
-				 String  movie_name=sc.next();
+				 String  movie_n=sc.next();
 				 System.out.println("Enter actor name:");
-				 String  actor_name=sc.next();
+				 String  actor_n=sc.next();
 				 System.out.println("Enter actress name:");
-				 String  actress_name=sc.next();
+				 String  actress_n=sc.next();
 				 System.out.println("Enter year:");
-				 int yearofrelease=sc.nextInt();
+				 int year_=sc.nextInt();
 				 
 				PreparedStatement pt=conn.prepareStatement("insert into movies values(?,?,?,?)");
-				 pt.setString(1, movie_name);
-				 pt.setString(2, actor_name);
-				 pt.setString(3, actress_name);
-				 pt.setInt(4, yearofrelease);
+				 pt.setString(1, movie_n);
+				 pt.setString(2, actor_n;
+				 pt.setString(3, actress_n);
+				 pt.setInt(4, year_);
 				 int n=pt.executeUpdate();
 				 System.out.println(n);
 				 
