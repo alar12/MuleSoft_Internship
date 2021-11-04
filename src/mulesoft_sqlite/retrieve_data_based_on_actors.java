@@ -18,9 +18,9 @@ public class retrieve_data_based_on_actors {
 				Statement st=conn.createStatement();				
 			Scanner sc=new Scanner(System.in);
 			System.out.println("Enter actor name:");
-			String actor=sc.next();
-				 PreparedStatement pt=conn.prepareStatement("select * from movies where actor=? ");
-				 pt.setString(1, actor);
+			String actor_name=sc.next();
+				 PreparedStatement pt=conn.prepareStatement("select * from movies where actor_name=? ");
+				 pt.setString(1, actor_name);
 				 ResultSet rs=pt.executeQuery();
 				 System.out.println("movie_name\tactor_name\tactress_name\tyear");
 				 System.out.println("________________________________________________");
