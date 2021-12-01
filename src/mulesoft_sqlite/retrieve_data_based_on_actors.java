@@ -11,7 +11,6 @@ public class retrieve_data_based_on_actors {
 	public static void main(String[] args) {
 		 try {
 			 Class.forName("org.sqlite.JDBC");
-			 String dbURL ="jdbc:sqlite:movies.db";
 			 Connection conn=DriverManager.getConnection("jdbc:sqlite:movies.db");
 			 if(conn!=null) {
 				 System.out.println("connection established successful");
