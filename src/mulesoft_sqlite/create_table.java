@@ -6,7 +6,6 @@ public class create_table {
 	public static void main(String[] args) {
 		 try {
 			 Class.forName("org.sqlite.JDBC");
-			 String dbURL ="jdbc:sqlite:movies.db";
 			 Connection conn=DriverManager.getConnection("jdbc:sqlite:movies.db");
 			 if(conn!=null) {
 				Statement st=conn.createStatement();				
